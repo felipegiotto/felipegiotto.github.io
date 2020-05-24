@@ -444,7 +444,7 @@
                     this.mostrandoResultado = false;
                     this.numeroMinimo = Number.parseInt(localStorage.getItem('tabuada.numeroMinimo') || '2');
                     this.numeroMaximo = Number.parseInt(localStorage.getItem('tabuada.numeroMaximo') || '2');
-                    this.qtdCiclos = Number.parseInt(localStorage.getItem('tabuada.qtdCiclos') || '2');
+                    this.qtdCiclos = Number.parseInt(localStorage.getItem('tabuada.qtdCiclos') || '1');
                 };
                 AppComponent.prototype.montarListaPerguntas = function () {
                     this.perguntas = [];
