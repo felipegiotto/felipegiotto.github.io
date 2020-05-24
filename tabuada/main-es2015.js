@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>REPLAY</p>\n\n<canvas #canvas width=\"400\" height=\"400\"></canvas>\n\n<p>\n    Pontos: {{ totalPontosFloor }}\n\n    <br />\n\n    <img [src]=\"totalPontosFloor < 100 ? 'assets/star_black.png' : 'assets/star_gold.png'\" height=\"50\" />\n    <img [src]=\"totalPontosFloor < 300 ? 'assets/star_black.png' : 'assets/star_gold.png'\" height=\"50\" />\n    <img [src]=\"totalPontosFloor < 500 ? 'assets/star_black.png' : 'assets/star_gold.png'\" height=\"50\" />\n    <img [src]=\"totalPontosFloor < 700 ? 'assets/star_black.png' : 'assets/star_gold.png'\" height=\"50\" />\n    <img [src]=\"totalPontosFloor < 900 ? 'assets/star_black.png' : 'assets/star_gold.png'\" height=\"50\" />\n\n    <br />\n\n    <button (click)=\"fechar()\">Início</button>\n</p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>REPLAY</p>\n\n<canvas #canvas width=\"300\" height=\"300\"></canvas>\n\n<p>\n    Pontos: {{ totalPontosFloor }}\n\n    <br />\n\n    <img [src]=\"totalPontosFloor < 100 ? 'assets/star_black.png' : 'assets/star_gold.png'\" height=\"50\" />\n    <img [src]=\"totalPontosFloor < 300 ? 'assets/star_black.png' : 'assets/star_gold.png'\" height=\"50\" />\n    <img [src]=\"totalPontosFloor < 500 ? 'assets/star_black.png' : 'assets/star_gold.png'\" height=\"50\" />\n    <img [src]=\"totalPontosFloor < 700 ? 'assets/star_black.png' : 'assets/star_gold.png'\" height=\"50\" />\n    <img [src]=\"totalPontosFloor < 900 ? 'assets/star_black.png' : 'assets/star_gold.png'\" height=\"50\" />\n\n    <br />\n\n    <button (click)=\"fechar()\">Início</button>\n</p>\n");
 
 /***/ }),
 
@@ -600,7 +600,7 @@ __webpack_require__.r(__webpack_exports__);
 let PontuacaoComponent = class PontuacaoComponent {
     constructor() {
         this.reset = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
-        this.larguraCanvas = 400;
+        this.larguraCanvas = 300;
         this.larguraAlvo = 300;
         this.totalPontos = 0;
         this.totalPontosFloor = 0;
@@ -609,12 +609,10 @@ let PontuacaoComponent = class PontuacaoComponent {
     }
     ngOnInit() {
         this.ctx = this.canvas.nativeElement.getContext('2d');
-        // this.instanciarPontuacaoFake();
         this.tiro.src = 'assets/tiro.mp3';
         this.tiro.load();
         this.desenharAlvo();
         setTimeout(() => this.desenharProximoPonto(), 2000);
-        //this.desenharProximoPonto();
     }
     fechar() {
         if (this.timeout) {
